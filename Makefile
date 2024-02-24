@@ -1,4 +1,5 @@
 # https://packages.debian.org/bookworm/sway
+# Note: requires build-essential library
 
 .POSIX:
 .SUFFIX:
@@ -16,6 +17,8 @@ git:
 	apt install -y git
 sway:
 	apt install -y sway
+	mkdir -p ~/.config/sway
+	cp -f /etc/sway/config ~/.config/sway/
 foot:
 	apt install -y foot
 swaylock:
