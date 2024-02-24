@@ -6,9 +6,9 @@
 TMPDIR := $(shell mktemp -d -t swayula.XXXXX)
 
 all: core dev extra
-core: update sway foot swaylock swayidle wofi
+core: update sway foot swaylock swayidle wayvnc wofi
 dev: update screen git
-extra: update firefox wayvnc
+extra: update firefox
 update:
 	apt update
 screen:
