@@ -30,7 +30,7 @@ swaylock:
 	wget https://github.com/dracula/swaylock/tarball/master -P $(TMPDIR)/swaylock
 	tar -xvf $(TMPDIR)/swaylock/master -C $(TMPDIR)/swaylock
 	mkdir -p ~/.config/swaylock
-	cp -rf $(TMPDIR)/swaylock/dracula-swaylock-*/conf ~/.config/swaylock
+	cp -rf $(TMPDIR)/swaylock/dracula-swaylock-*/swaylock/conf ~/.config/swaylock
 swayidle:
 	sudo apt install -y swayidle
 wayvnc:
