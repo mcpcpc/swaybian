@@ -8,7 +8,7 @@
 TMPDIR := $(shell mktemp -d -t swayula.XXXXX)
 
 all: core dev extra
-core: update sway foot swaylock swayidle wayvnc wofi mako
+core: update sway foot swaylock swayidle clipman wofi mako wayvnc
 dev: update screen git
 extra: update firefox
 update:
@@ -21,6 +21,9 @@ sway:
 	sudo apt install -y sway
 	mkdir -p ~/.config/sway
 	cp -f /etc/sway/config ~/.config/sway/
+clipman:
+	sudo apt install -y clipman
+	grep -q -F "wl-paste" ~/.config/sway/config || echo "exec wl-paste -t text --watch clipman store" >> ~/.config/sway/config
 foot:
 	sudo apt install -y foot
 mako:
