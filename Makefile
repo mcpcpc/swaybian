@@ -7,22 +7,22 @@
 .SUFFIX:
 TMPDIR := $(shell mktemp -d -t swayula.XXXXX)
 
-all: core dev extra
-core: update sway foot mako swayidle-swaylock wayvnc
-dev: update screen git
+all: required optional extra
+required: update sway foot
+optional: update mako swayidle-swaylock wayvnc brightnessctl
 extra: update firefox
 update:
 	sudo apt update
-screen:
-	sudo apt install -y screen
-git:
-	sudo apt install -y git
 sway:
 	sudo apt install -y sway
 	mkdir -p ~/.config/sway
 	cp -f /etc/sway/config ~/.config/sway/
 foot:
 	sudo apt install -y foot
+brightnessctl:
+	sudo apt install -y brightnessctl
+	grep -q -F "XF86MonBrightnessDown" ~/.config/sway/config || echo "bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-" >> ~/.config/sway/config
+	grep -q -F "XF86MonBrightnessUp" ~/.config/sway/config || echo "bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+" >> ~/.config/sway/config
 mako:
 	sudo apt install -y mako-notifier
 	grep -q -F "exec mako" ~/.config/sway/config || echo "exec mako" >> ~/.config/sway/config
