@@ -10,25 +10,29 @@ core: update sway foot swaylock swayidle wayvnc wofi
 dev: update screen git
 extra: update firefox
 update:
-	apt update
+	sudo apt update
 screen:
-	apt install -y screen
+	sudo apt install -y screen
 git:
-	apt install -y git
+	sudo apt install -y git
 sway:
-	apt install -y sway
+	sudo apt install -y sway
 	mkdir -p ~/.config/sway
 	cp -f /etc/sway/config ~/.config/sway/
 foot:
-	apt install -y foot
+	sudo apt install -y foot
+	wget https://github.com/dracula/foot/tarball/master -P $(TMPDIR)/foot
+	tar -xvf $(TMPDIR)/foot/master
+	mkdir -p ~/.config/foot
+	cp -f $(TMPDIR)/foot/dracula-foot-*/foot.ini ~/.config/foot/
 swaylock:
-	apt install -y swaylock
+	sudo apt install -y swaylock
 swayidle:
-	apt install -y swayidle
+	sudo apt install -y swayidle
 wayvnc:
-	apt install -y wayvnc
+	sudo apt install -y wayvnc	
 wofi:
-	apt install -y wofi	
+	sudo apt install -y wofi	
 firefox:
-	apt install -y firefox-esr
+	sudo apt install -y firefox-esr
 	export MOZ_ENABLE_WAYLAND=1
