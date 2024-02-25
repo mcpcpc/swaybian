@@ -36,7 +36,7 @@ wayvnc:
 	sudo apt install -y wayvnc
 	mkdir -p ~/.config/wayvnc
 	ssh-keygen -m pem -f ~/.config/wayvnc/rsa_key.pem -t rsa -N ""
-	echo "rsa_private_key_file=$HOME/.config/wayvnc/rsa_key.pem" > ~/.config/wayvnc/config
+	echo "rsa_private_key_file=$(HOME)/.config/wayvnc/rsa_key.pem" > ~/.config/wayvnc/config
 	
 wofi:
 	sudo apt install -y wofi	
