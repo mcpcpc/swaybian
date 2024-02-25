@@ -22,7 +22,7 @@ sway:
 foot:
 	sudo apt install -y foot
 	wget https://github.com/dracula/foot/tarball/master -P $(TMPDIR)/foot
-	tar -xvf $(TMPDIR)/foot/master
+	tar -xvf $(TMPDIR)/foot/master -C $(TMPDIR)/foot
 	mkdir -p ~/.config/foot
 	cp -f $(TMPDIR)/foot/dracula-foot-*/foot.ini ~/.config/foot/
 swaylock:
