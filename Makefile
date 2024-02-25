@@ -30,8 +30,7 @@ swaylock:
 	sudo apt install -y swaylock
 swayidle:
 	sudo apt install -y swayidle
-	grep -q -F "set \$lock" ~/.config/sway/config || echo "set \$lock swaylock -c 550000" >> ~/.config/sway/config
-	grep -q -F "exec swayidle" ~/.config/sway/config || echo "exec swayidle -w timeout 600 \$lock timeout 570 'swaymsg \"output * dpms off\"' resume 'swaymsg \"output * dpms on\"' before-sleep \$lock" >> ~/.config/sway/config
+	echo "exec swayidle -w timeout 600 'swaylock -c 550000' timeout 570 'swaymsg \"output * dpms off\"' resume 'swaymsg \"output * dpms on\"' before-sleep 'swaylock -c 550000'" >> ~/.config/sway/config
 wayvnc:
 	sudo apt install -y wayvnc
 wofi:
