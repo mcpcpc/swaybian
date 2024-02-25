@@ -6,7 +6,7 @@
 TMPDIR := $(shell mktemp -d -t swayula.XXXXX)
 
 all: core dev extra
-core: update sway foot swaylock swayidle wayvnc wofi
+core: update sway foot swaylock swayidle wayvnc wofi mako
 dev: update screen git
 extra: update firefox
 update:
@@ -21,6 +21,8 @@ sway:
 	cp -f /etc/sway/config ~/.config/sway/
 foot:
 	sudo apt install -y foot
+mako:
+	sudo apt install -y mako-notifier
 swaylock:
 	sudo apt install -y swaylock
 swayidle:
