@@ -31,6 +31,7 @@ swaylock:
 	tar -xvf $(TMPDIR)/swaylock/master -C $(TMPDIR)/swaylock
 	mkdir -p ~/.config/swaylock
 	cp -rf $(TMPDIR)/swaylock/dracula-swaylock-*/swaylock/config ~/.config/swaylock
+	cp -rf $(TMPDIR)/swaylock/dracula-swaylock-*/swaylock/dracula-wallpaper.svg ~/.config/swaylock
 swayidle:
 	sudo apt install -y swayidle
 wayvnc:
