@@ -21,16 +21,8 @@ sway:
 	cp -f /etc/sway/config ~/.config/sway/
 foot:
 	sudo apt install -y foot
-	wget https://github.com/dracula/foot/tarball/master -P $(TMPDIR)/foot
-	tar -xvf $(TMPDIR)/foot/master -C $(TMPDIR)/foot
-	mkdir -p ~/.config/foot
-	cp -f $(TMPDIR)/foot/dracula-foot-*/foot.ini ~/.config/foot/
 swaylock:
 	sudo apt install -y swaylock
-	wget https://github.com/dracula/swaylock/tarball/master -P $(TMPDIR)/swaylock
-	tar -xvf $(TMPDIR)/swaylock/master -C $(TMPDIR)/swaylock
-	mkdir -p ~/.config/swaylock
-	cp -rf $(TMPDIR)/swaylock/dracula-swaylock-*/swaylock/* ~/.config/swaylock
 swayidle:
 	sudo apt install -y swayidle
 wayvnc:
@@ -39,4 +31,4 @@ wofi:
 	sudo apt install -y wofi	
 firefox:
 	sudo apt install -y firefox-esr
-	export MOZ_ENABLE_WAYLAND=1
+	grep -q -F "MOZ_ENABLE_WAYLAND" || echo "export MOZ_ENABLE_WAYLAND=1" >> ~/.profile
