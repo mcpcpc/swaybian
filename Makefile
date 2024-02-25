@@ -19,6 +19,15 @@ sway:
 	sudo apt install -y sway
 	mkdir -p ~/.config/sway
 	cp -f /etc/sway/config ~/.config/sway/
+	wget https://github.com/dracula/waybar/tarball/master -P $(TMPDIR)/waybar
+	tar -xvf $(TMPDIR)/waybar/master -C $(TMPDIR)/waybar
+	mkdir -p ~/.config/waybar
+	cp -rf $(TMPDIR)/waybar/dracula-waybar-*/waybar/colors.css ~/.config/waybar
+	echo "@import url(\"./colors.css\");" > ~/.config/waybar/style.css
+	echo "window#waybar {" >> ~/.config/waybar/style.css
+	echo "background: @background;" >> ~/.config/waybar/style.css
+	echo "color: @purple;" >> ~/.config/waybar/style.css
+	echo "}" >> ~/.config/waybar/style.css
 foot:
 	sudo apt install -y foot
 	wget https://github.com/dracula/foot/tarball/master -P $(TMPDIR)/foot
