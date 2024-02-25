@@ -31,4 +31,4 @@ wofi:
 	sudo apt install -y wofi	
 firefox:
 	sudo apt install -y firefox-esr
-	grep -q -F "MOZ_ENABLE_WAYLAND" || echo "export MOZ_ENABLE_WAYLAND=1" >> ~/.profile
+	grep -q -F "MOZ_ENABLE_WAYLAND" ~/.profile || echo "export MOZ_ENABLE_WAYLAND=1" >> ~/.profile
