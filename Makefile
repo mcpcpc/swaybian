@@ -24,6 +24,7 @@ foot:
 	sudo apt install -y foot
 mako:
 	sudo apt install -y mako-notifier
+	grep -q -F "exec mako" ~/.config/sway/config || echo "exec mako" >> ~/.config/sway/config
 swaylock:
 	sudo apt install -y swaylock
 swayidle:
