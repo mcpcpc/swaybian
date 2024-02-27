@@ -9,7 +9,7 @@ TMPDIR := $(shell mktemp -d -t swayula.XXXXX)
 
 all: required optional extra
 required: update sway foot
-optional: update mako swayidle-swaylock wayvnc brightnessctl
+optional: update mako swayidle-swaylock wayvnc brightnessctl wofi
 extra: update firefox
 update:
 	sudo apt update
@@ -33,7 +33,7 @@ wayvnc:
 	sudo apt install -y wayvnc --no-install-recommends
 wofi:
 	sudo apt install -y wofi --no-install-recommends
-	sed -i "s/.*dmenu.*/set \$menu wofi --show run | xargs swaymsg exec/" ~/.config/sway/config
+	sed -i "s/.*dmenu.*/set \$$menu wofi --show run | xargs swaymsg exec/" ~/.config/sway/config
 mpv:
 	sudo apt install -y mpv --no-install-recommends
 firefox:
