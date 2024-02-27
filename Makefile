@@ -33,6 +33,7 @@ wayvnc:
 	sudo apt install -y wayvnc --no-install-recommends
 wofi:
 	sudo apt install -y wofi --no-install-recommends
+	sed -i "s/.*dmenu.*/set \$menu wofi --show run | xargs swaymsg exec/" ~/.config/sway/config
 mpv:
 	sudo apt install -y mpv --no-install-recommends
 firefox:
