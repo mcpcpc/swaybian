@@ -9,7 +9,7 @@ TMPDIR := $(shell mktemp -d -t swayula.XXXXX)
 
 all: required optional extra
 required: update sway foot
-optional: update mako swayidle-swaylock wayvnc brightnessctl wofi
+optional: update swayidle-swaylock wayvnc brightnessctl wofi mako
 extra: update firefox
 update:
 	sudo apt update
