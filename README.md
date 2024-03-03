@@ -1,12 +1,12 @@
-# Swayula
+# Swaybian
 
 ## Getting Started
 
 ```shell
 sudo apt update
 sudo apt install -y git build-essential
-git clone https://github.com/mcpcpc/swayula
-cd swayula/
+git clone https://github.com/mcpcpc/swaybian
+cd swaybian/
 make
 ```
 
